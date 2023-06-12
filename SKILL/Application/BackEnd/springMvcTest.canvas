@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"e316b7f4cd299e03","x":-640,"y":-440,"width":1760,"height":1280,"type":"group","label":"事务+AOP增强全注解式开发"},
+		{"id":"ee5835263e513639","x":-578,"y":-61,"width":1098,"height":521,"type":"group","label":"事务开发"},
+		{"id":"3df717da1289f333","x":-384,"y":520,"width":404,"height":260,"type":"group","label":"事务增强开发"},
+		{"id":"20f6fc2bf0d858dc","x":47,"y":-11,"width":410,"height":105,"type":"text","text":"/resources/mapper/AccountMapper.xml\n绑定Mybatis映射;\n标签id和Mapper类中的函数名要一致；"},
+		{"id":"572c897895d4e2b9","x":-384,"y":237,"width":516,"height":125,"type":"text","text":"com.itheima.service.AccountService;\n编写Service实现真正的业务逻辑；\n\nService接口要包含业务方法；\nService实现要包含一个私有的访问数据库的mapper类；\n重写接口方法"},
+		{"id":"844439e6aee7fddd","x":-470,"y":20,"width":324,"height":148,"type":"text","text":"com.itheima.mapper.AccountMapper;\n编写Mapper实现访问数据库的事务；\n\nMapper与MyBatis绑定，是一个接口；\n使用注解添加sql语句；"},
+		{"id":"c316b6557af971af","x":659,"y":125,"width":243,"height":237,"type":"text","text":"Main\n\n将配置类SpringConfig注入AnnotationApplicationContext，生成ApplicationContext；然后getBean获取Service执行业务"},
+		{"id":"42865968d97c3303","x":-340,"y":560,"width":284,"height":160,"type":"text","text":"com.itheima.aspect.AccountAspect;\n编写Aspect类\n\n注解：\n定义Aspect和Component\n配合切点，配置切点表达式\n切面函数的运行时机"},
+		{"id":"89f8ddd1f412afee","x":-340,"y":-380,"width":309,"height":271,"type":"text","text":"com.itheima.conif.SpringConfig；\n编写配置类\n\n注解：\n事务管理自动扫描\n组建自动扫描\n切面自动扫描\n配置类标识\n配置Aspect自动扫描"}
+	],
+	"edges":[
+		{"id":"7b5370209c241917","fromNode":"89f8ddd1f412afee","fromSide":"bottom","toNode":"844439e6aee7fddd","toSide":"top"},
+		{"id":"cfec3c180a26c820","fromNode":"844439e6aee7fddd","fromSide":"right","toNode":"20f6fc2bf0d858dc","toSide":"left"},
+		{"id":"1a056e008d7b9699","fromNode":"20f6fc2bf0d858dc","fromSide":"left","toNode":"844439e6aee7fddd","toSide":"right"},
+		{"id":"dc52d58d5e3cc06a","fromNode":"844439e6aee7fddd","fromSide":"bottom","toNode":"572c897895d4e2b9","toSide":"top"},
+		{"id":"1c44028d2e36c40f","fromNode":"42865968d97c3303","fromSide":"top","toNode":"572c897895d4e2b9","toSide":"bottom"},
+		{"id":"fb1d406cef3fa252","fromNode":"572c897895d4e2b9","fromSide":"right","toNode":"c316b6557af971af","toSide":"left"}
+	]
+}
